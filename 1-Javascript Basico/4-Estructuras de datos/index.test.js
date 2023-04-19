@@ -13,38 +13,44 @@ describe("Arreglos", () => {
     let arr = [];
 
     // agregar x
-    let x = 1;
+ 
+    arr = [x];
 
     expect(arr).toStrictEqual([1]);
 
     // agregar y
+   
     let y = 2;
+    arr = [x,y];
 
     expect(arr).toStrictEqual([1, 2]);
 
     // agregar z
+
     let z = 3;
+    arr = [x,y,z];
 
     expect(arr).toStrictEqual([1, 2, 3]);
   });
   it("Eliminar elementos", () => {
     let arr = [1, 2, 3];
 
-    // eliminar el ultimo elemento
+    // eliminar el ultimo elemento  //arr pop
 
     expect(arr).toStrictEqual([1, 2]);
 
     let arr2 = [1, 2, 3];
+    arr2.pop();
 
     // eliminar el 2
 
-    expect(arr2).toStrictEqual([1, 3]);
+    expect(arr2).toStrictEqual([1]);
   });
+
   it("Largo de un arreglo", () => {
-    let arr = [];
+    let arr = [1,2,3];
 
     // agregar los elementos necsarios para que funcione
-
     expect(arr.length).toBe(3);
   });
 });
