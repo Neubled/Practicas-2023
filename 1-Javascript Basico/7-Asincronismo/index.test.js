@@ -49,7 +49,7 @@ describe("asincronismo", () => {
      * NOTA: para buscar el trago por nombre utilice el siguienre parametro de busqueda: "Gin%20And%20Tonic"
      */
 
-    const URL = "https://www.thecocktaildb.com/drink/11403=${drink}";
+    const URL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}";
 
    const drink= "Gin%20And%20Tonic";
 
