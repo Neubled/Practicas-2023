@@ -83,14 +83,14 @@ describe("Manejo avanzado de arreglos", () => {
     
     primo = undefined;
 
-for (let i = 0; i < arr2.length; i++) {
+for (let i = 0; i < arr2.length; i++) {      //
   if (esPrimo(arr2[i])) {
     primo = arr2[i];
     break;
   }
 }
 
-if (Math.sqrt(primo) > 5) {
+if (Math.sqrt(primo) > 5) {       //operador ternario
   arr2.sort((a, b) => a - b);
 } else {
   arr2.reverse();

@@ -24,7 +24,7 @@ const objStr = new String("Un objeto String");
 
 //Hay metodos que solo pueden utilizarse en strings
 
-"perro".toUpperCase(); // Devuelve "PERRO"
+"perro".toUpperCase(); // Devuelve "PERRO"1, 2, 3
 ```
 
 Existen muchos mas metodos y formas de utilizar Strings, estos son solo los mas simples
