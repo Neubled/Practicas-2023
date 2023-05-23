@@ -46,11 +46,12 @@ describe("Manejo avanzado de arreglos", () => {
 
 
   it("Primos", () => {
-    /** 
-    * Dado un array de numeros, obtener el primer numero primo que aparezca y guardarlo en una variable. Si la raiz cuadrada del numero es mayor a 5, ordenar el arreglo, sino invertirlo
-    */
-    const arr1 = [1,4,14,25,67,2,17,23];
+    /**
+     * Dado un array de numeros, obtener el primer numero primo que aparezca y guardarlo en una variable. Si la raiz cuadrada del numero es mayor a 5, ordenar el arreglo, sino invertirlo
+     */
+    const arr1 = [1, 4, 14, 25, 67, 2, 17, 23];
     let primo;
+//<<<<<<< HEAD
     
     function esPrimo(num) {
       if (num < 2) {       
@@ -79,7 +80,7 @@ describe("Manejo avanzado de arreglos", () => {
     
     expect(arr1).toStrictEqual([1,2,4,14,17,23,25,67]);
 
-    const arr2= [32,5,27,1,8,156,20,14];
+  arr2= [32,5,27,1,8,156,20,14];
     
     primo = undefined;
 
@@ -98,5 +99,13 @@ if (Math.sqrt(primo) > 5) {       //operador ternario
 
     expect(arr2).toStrictEqual([14,20,156,8,1,27,5,32]);
 
+//=======
+
+    expect(arr1).toStrictEqual([1, 2, 4, 14, 17, 23, 25, 67]);
+
+    arr2 = [32, 5, 27, 1, 8, 156, 20, 14];
+
+    expect(arr2).toStrictEqual([14, 20, 156, 8, 1, 27, 5, 32]);
+//>>>>>>> 2893646dbed78da8c71778d097e31e65abda595d
   });
 });
