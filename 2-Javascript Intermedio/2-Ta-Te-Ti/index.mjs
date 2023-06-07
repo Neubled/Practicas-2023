@@ -1,21 +1,3 @@
-
-async function creartablero() {
-  const tablero = [];
-  for (let i = 0; i < 3; i++) {
-    tablero.push(["-", "-", "-"]);
-  }
-  return tablero;
-}
-
-async function Imprimirtablero(tablero) {
-  for (let i = 0; i < tablero; i++) {
-    console.log(tablero.join(" | "));
-    if (i < tablero - 1) {
-      console.log("-----------");
-    }
-  }
-}
-
 import inquirer, { createPromptModule } from "inquirer";
 async function promptcolumna() {
   const answers = await inquirer.prompt({
@@ -35,48 +17,22 @@ async function promptfila() {
   return answers.fila;
 }
 
+function crearmatriz() {
+  return [
+    ["-", "-", "-"],
+    ["-", "-", "-"],
+    ["-", "-", "-"],
+  ];
+}
+
 function imprimirMatriz(matriz) {
   for (let i = 0; i < matriz.length; i++) {
-    console.log(matriz[i].join(' '));
+    console.log(matriz[i].join(" "));
   }
 }
 
-// Ejemplo de uso:
-const matriz = [
-  [ '-', '-', '-' ],
-  [ '-', '-', '-' ],
-  [ '-', '-', '-' ]
-];
-
-imprimirMatriz(matriz);
-
-// async function asignarValor() {
-//   const columna = await promptcolumna();
-//   const fila = await promptfila();
-
-//   matriz[fila][columna] = 'X';
-
-//   console.log(matriz);
-// }
-
-asignarValor();
-
-let jugadorActual = 'X';
-
-async function asignarValor() {
-  const columna = await promptcolumna();
-  const fila = await promptfila();
-
-  matriz[fila][columna] = jugadorActual;
-
-  console.log(matriz);
-
-  jugadorActual = jugadorActual === 'X' ? 'O' : 'X';
-}
-
-
-function verificarGanador() {
-  const jugadores = ['X', 'O'];
+function verificarGanador(matriz) {
+  const jugadores = ["X", "O"];
 
   for (let i = 0; i < jugadores.length; i++) {
     const jugador = jugadores[i];
@@ -123,70 +79,62 @@ function verificarGanador() {
 
   return null; // No hay ganador
 }
+async function jugarTaTeTi(matriz) {
+  let jugadorActual = "X";
+  let contadorTurnos = 0;
 
-// const matriz = creartablero();
+  while (true) {
+    console.log("Turno del jugador:", jugadorActual);
+    const columna = await promptcolumna();
+    const fila = await promptfila();
+    if (fila > 2 || columna > 2 || fila < 0 || columna < 0) {
+      console.log("el numero seleccionado esta fuera de rango");
 
-// async function jugar() {
-//   let jugadorActual = 'X';
+      continue;
+    }
 
-//   while (true) {
-//     console.log("Turno del jugador " + jugadorActual);
-//     Imprimirtablero(matriz);
+    if (matriz[fila][columna] !== "-") {
+      console.log(
+        "La posición seleccionada ya está ocupada. Intenta nuevamente."
+      );
+      continue;
+    }
 
-//     const columna = await promptcolumna();
-//     const fila = await promptfila();
+    matriz[fila][columna] = jugadorActual;
 
-//     matriz[fila][columna] = jugadorActual;
+    contadorTurnos++;
+    console.log("turnos:", contadorTurnos);
 
-//     const ganador = verificarGanador();
-//     if (ganador) {
-//       console.log("¡El jugador " + ganador + " ha ganado!");
-//       break;
-//     }
+    if (verificarGanador(matriz)) {
+      console.log("¡El jugador", jugadorActual, "ha ganado!");
+      return matriz;
+    } else if (contadorTurnos === 9) {
+      console.log("¡El juego ha terminado en empate!");
+      return matriz;
+    }
 
-//     if (tableroCompleto(matriz)) {
-//       console.log("¡Empate!");
-//       break;
-//     }
+    jugadorActual = jugadorActual === "X" ? "O" : "X";
+    imprimirMatriz(matriz);
+  }
+}
 
-//     jugadorActual = jugadorActual === 'X' ? 'O' : 'X';
-//   }
-// }
-
-// function tableroCompleto(matriz) {
-//   for (let i = 0; i < matriz.length; i++) {
-//     for (let j = 0; j < matriz[i].length; j++) {
-//       if (matriz[i][j] === '-') {
-//         return false;
-//       }
-//     }
-//   }
-//   return true;
-// }
-
-
-// jugar();
 async function main() {
   try {
-    console.log("¡Bienvenidos al Ta-Te-Ti!");
+    console.log("¡BIENNVENIDOS AL TA-TE-TI!");
     console.log("--------------------------------");
     console.log("Tablero:");
     console.log("columnas | , filas -");
-    console.log([ [ '0.0', '1.0', '2.0' ]]);
-    console.log([ [ '0.1', '1.1', '2.1' ]]);
-    console.log([ [ '0.2', '1.2', '2.2' ]]);
+    console.log([["0.0", "1.0", "2.0"]]);
+    console.log([["0.1", "1.1", "2.1"]]);
+    console.log([["0.2", "1.2", "2.2"]]);
     console.log("--------------------------------");
-    
-    const ctablero = await creartablero();
-    console.log(ctablero);
-    const tablero = await Imprimirtablero();
-    const columna = await promptcolumna();
-    const fila = await promptfila();
-    const turnos =  await asignarValor();
-    const ganador = await verificarGanador();
-    const Juego =  await jugarTaTeTi();
+    console.log("Jugador inicial X");
 
-    console.log("tu posicion es ${nombre}");
+    const ctablero = crearmatriz();
+    imprimirMatriz(ctablero);
+    const Juego = await jugarTaTeTi(ctablero);
+    imprimirMatriz(Juego);
+    console.log("GRACIAS POR JUGAR!!!");
   } catch (error) {
     console.error(error);
   }
