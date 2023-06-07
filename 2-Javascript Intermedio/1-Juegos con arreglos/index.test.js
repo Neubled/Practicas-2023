@@ -12,66 +12,63 @@ describe("Juegos con arreglos", () => {
      * Dada una funcion numberSpiral(n) donde n es un numero entero
      * La funcion debe retornar una matriz que simule una espiral de numeros desde 1 hasta n
      */
+    const numberSpiral = (n) => {
+      const matrix = [];
+      const qOfArrays = Math.ceil(Math.sqrt(n));
+      const mid = Math.floor(qOfArrays / 2);
+      let numeroAImprimir = 1;
 
-    function numberSpiral(n) {
-      const tam = Math.ceil(Math.sqrt(n));
-      const matriz= [];
-
-     for (let i = 0; i < tam; i++) {
-       matriz.push(new Array(tam).fill(0));
-  }
-
-      let x = Math.floor(tam / 2);
-      let y = Math.floor(tam / 2);
-
-      let num = 1;
-
-      let dx = 0;
-      let dy = -1; 
-
-      for (let i = 1; i <= n; i++) {
-
-        matriz[y][x] = num;
-        num++;
-
-      
-          // Cambiar de dirección según el sentido de las manecillas del reloj: derecha -> abajo -> izquierda -> arriba
-          const temp = dx;
-          dx = -dy;
-          dy = temp;
-        
-        x += dx; // Mover en la dirección actual en el eje x
-        y += dy; // Mover en la dirección actual en el eje y
+      for (let i = 0; i < qOfArrays; i++) {
+        matrix.push([]);
       }
-      if (x === y + 1 && x > 0) {
-        dx = 0;
-        dy = 1;
-      } else if (x === y && x < 0) {
-        dx = 1;
-        dy = 0;
-      } else if (x === y && x > 0) {
-        dx = -1;
-        dy = 0;
-      } else if (x === 1 - y && x < 0) {
-        dx = 0;
-        dy = -1;
+      let x = mid;
+      let y = mid;
+      let nivelActual = 0;
+      matrix[y][x] = numeroAImprimir;
+      console.log("x:", x, "   y:", y);
+      while (nivelActual < qOfArrays) {
+        //Derecha
+        for (let i = 1; i <= nivelActual * 2 + 1; i++) {
+          if (numeroAImprimir === n) return matrix;
+          numeroAImprimir++;
+          x++;
+          matrix[y][x] = numeroAImprimir;
+          console.log("x:", x, "   y:", y);
+        }
+        //Arriba
+        for (let i = 1; i <= nivelActual * 2 + 1; i++) {
+          if (numeroAImprimir === n) return matrix;
+          numeroAImprimir++;
+          y--;
+          matrix[y][x] = numeroAImprimir;
+          console.log("x:", x, "   y:", y);
+        }
+        //Izquierda
+        for (let i = 1; i <= nivelActual * 2 + 2; i++) {
+          if (numeroAImprimir === n) return matrix;
+          numeroAImprimir++;
+          x--;
+          matrix[y][x] = numeroAImprimir;
+          console.log("x:", x, "   y:", y);
+        }
+        //Abajo
+        for (let i = 1; i <= nivelActual * 2 + 2; i++) {
+          if (numeroAImprimir === n) return matrix;
+          numeroAImprimir++;
+          y++;
+          matrix[y][x] = numeroAImprimir;
+          console.log("x:", x, "   y:", y);
+        }
+        nivelActual++;
       }
-    }
-      return matriz;
-    });      
-   
-    const result = numberSpiral(9);
-  console.log(result);
+      return matrix;
+    };
 
     expect(numberSpiral(9)).toStrictEqual([
       [5, 4, 3],
       [6, 1, 2],
       [7, 8, 9],
     ]);
-
-
-    const result2 = numberSpiral(25);
-  console.log(result2);
 
     expect(numberSpiral(25)).toStrictEqual([
       [17, 16, 15, 14, 13],
@@ -80,18 +77,12 @@ describe("Juegos con arreglos", () => {
       [20, 7, 8, 9, 10],
       [21, 22, 23, 24, 25],
     ]);
-
-
-    const result3 = numberSpiral(7);
-    console.log(result3);
-
     expect(numberSpiral(7)).toStrictEqual([
       [5, 4, 3],
       [6, 1, 2],
       [7, -1, -1],
     ]);
   });
-
 
   it("Espiral de numeros con condiciones", () => {
     /**
@@ -122,4 +113,4 @@ describe("Juegos con arreglos", () => {
       [-1, 8, -1],
     ]);
   });
-
+});
