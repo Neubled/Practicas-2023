@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { sum, pot, isMultiple, fibonacci, removeSpaces, mayusMinus, oldDate } from "../answer";
+// import { sum, pot, isMultiple, fibonacci, removeSpaces, mayusMinus, oldDate } from "../answer";
 
 describe("Funciones", () => {
   it("Matematicas", () => {
@@ -67,6 +67,16 @@ return arr;
     
 
     expect(removeSpaces("Hola soy una cadena de caracteres")).toBe("Holasoyunacadenadecaracteres");
+
+    const mayusMinus2 = (str) => {
+      return str
+        .split(" ")
+        .map((word, i) => {
+          if (i % 2 == 0) return word.charAt(0).toUpperCase() + word.slice(1, word.length).toLowerCase();
+          return word.charAt(0).toLowerCase() + word.slice(1, word.length).toUpperCase();
+        })
+        .join(" ");
+    };
 
     /**
      * Programar una funcion que reciba un String str

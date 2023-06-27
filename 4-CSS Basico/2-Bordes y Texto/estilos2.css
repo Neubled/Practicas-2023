@@ -1,0 +1,41 @@
+div,strong {
+  border-style: solid; /* Todo el borde punteado */
+  border-width: 2px; /* Todos los bordes son de 10px */
+  border-color: red;
+
+}
+
+.borde1 {
+  /*border-color: rgba(0, 255, 0, 0.3);*/
+ /*border-width: 7px;*/
+ /*border-style: repeat-x;*/
+border: 4px groove rgba(0, 0, 255, 0.719)
+}
+
+.borde2 {
+  /*border-color: rgba(0, 255, 0, 0.3);*/
+ /*border-width: 7px;*/
+ /*border-style: repeat-x;*/
+border: 5px double rgba(0, 197, 59, 0.822)
+}
+
+/*div {
+  color: red; /* Asgina un color al texto */
+ /* text-align: center; /* Alinea todo el texto en el centro */
+ /* text-decoration-line: underline; /* Añade una linea debajo del texto */
+  /*text-transform: uppercase; /* Pone todo el texto en mayuscula */
+
+  /* font-family: "Times New Roman", Times, serif;
+  /* Se asignan 3 tipos de fuentes al texto, si una letra no tiene estilo para "Times New Roman" se intenta asignar la siguiente y asi sucesivamente */
+
+
+p {
+  border-style: solid; /* Borde continuo, solido */
+  border-style: dotted; /* Todo el borde punteado */
+  border-width: 10px; /* Todos los bordes son de 10px */
+  border-color: red;
+}
+
+span {
+  border-style: hidden; /* Borde oculto, no es lo mismo que sin borde */
+}
