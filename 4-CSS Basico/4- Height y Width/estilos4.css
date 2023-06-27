@@ -1,9 +1,15 @@
+div.strong{
+  height: 2000px;
+  width: 2000px;
+}
+
 .color1 {
   background: rgba(255, 0, 0, 0.3);
   background-repeat: repeat-x;
 }
 
 div,.color1{
+  
   margin-top: 10px;
   margin-bottom: 100px;
   margin-right: 40px;
@@ -11,6 +17,9 @@ div,.color1{
 }
 
 div.color1{
+  height: 100px;
+  width: 100px;
+
   padding-top: 40px;
   padding-bottom: 200px;
   padding-right: 50.2px;
@@ -24,28 +33,37 @@ div.color1{
   /*border-color: rgba(0, 255, 0, 0.3);*/
  /*border-width: 7px;*/
  /*border-style: repeat-x;*/
-border: groove rgba(0, 0, 255, 0.719)
+border: 4px groove rgba(0, 0, 255, 0.719)
 }
 
 div,.borde1{
- 
-  height: 200px;
-  width: 200px;
-}
-div.borde1{
+  
+  height: 100px;
+  width: 100px;
 
-  height: 200px;
-  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 70px;
+
 }
+
+
+
 
 .borde2 {
   /*border-color: rgba(0, 255, 0, 0.3);*/
  /*border-width: 7px;*/
  /*border-style: repeat-x;*/
-border: 5px double rgba(0, 197, 59, 0.822)
+border: 5px double rgb(0, 197, 59)
 }
 
+
 div,.borde2{
+
+  height: 100px;
+  width: 100px;
+
   margin-top: 10px;
   margin-bottom: 100px;
   margin-right: 40px;
@@ -55,12 +73,20 @@ div,.borde2{
 
 
 div,.span{
+  height: 500px;
+width: 500px;
+
   margin-top: 10px;
   margin-bottom: 100px;
   margin-right: 40px;
   margin-left: 70px;
 }
 
+div,strong{
+  height: 1000px;
+width: 1000px;
+
+}
 
 
 /*div {
