@@ -1,0 +1,29 @@
+
+.color8 {
+  background: rgba(141, 141, 141, 0.991);
+  background-repeat: repeat-x;
+}
+
+.cuadrado {
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    width: 20%;
+    height: 20%;
+  }
+  to {
+    transform: rotate(360deg);
+    width: 40%;
+    height: 40%;
+  }
+}

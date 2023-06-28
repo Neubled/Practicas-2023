@@ -1,0 +1,124 @@
+div.strong{
+  height: 2000px;
+  width: 2000px;
+}
+
+.color1 {
+  background: rgba(255, 0, 0, 0.3);
+  background-repeat: repeat-x;
+}
+
+div,.color1{
+  
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 70px;
+}
+
+div.color1{
+  height: 100px;
+  width: 100px;
+
+  padding-top: 40px;
+  padding-bottom: 200px;
+  padding-right: 50.2px;
+  padding-left: 180px;
+}
+
+
+
+
+.borde1 {
+  /*border-color: rgba(0, 255, 0, 0.3);*/
+ /*border-width: 7px;*/
+ /*border-style: repeat-x;*/
+border: 4px groove rgba(0, 0, 255, 0.719)
+}
+
+div,.borde1{
+  
+  height: 100px;
+  width: 100px;
+
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 70px;
+
+}
+
+
+
+
+.borde2 {
+  /*border-color: rgba(0, 255, 0, 0.3);*/
+ /*border-width: 7px;*/
+ /*border-style: repeat-x;*/
+border: 5px double rgb(0, 197, 59)
+}
+
+
+div,.borde2{
+
+  height: 100px;
+  width: 100px;
+
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 70px;
+}
+
+
+
+div,.span{
+  height: 500px;
+width: 500px;
+
+  margin-top: 10px;
+  margin-bottom: 100px;
+  margin-right: 40px;
+  margin-left: 70px;
+}
+
+div,strong{
+  height: 1000px;
+width: 1000px;
+
+}
+
+
+/*div {
+  color: red; /* Asgina un color al texto */
+ /* text-align: center; /* Alinea todo el texto en el centro */
+ /* text-decoration-line: underline; /* Añade una linea debajo del texto */
+  /*text-transform: uppercase; /* Pone todo el texto en mayuscula */
+
+  /* font-family: "Times New Roman", Times, serif;
+  /* Se asignan 3 tipos de fuentes al texto, si una letra no tiene estilo para "Times New Roman" se intenta asignar la siguiente y asi sucesivamente */
+
+
+p {
+  border-style: solid; /* Borde continuo, solido */
+  border-style: dotted; /* Todo el borde punteado */
+  border-width: 10px; /* Todos los bordes son de 10px */
+  border-color: red;
+}
+
+span {
+  border-style: hidden; /* Borde oculto, no es lo mismo que sin borde */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+height: 100px; 
+width: 100px;
+}
+
+img {
+  height: 300px; 
+width: 300px;
+}

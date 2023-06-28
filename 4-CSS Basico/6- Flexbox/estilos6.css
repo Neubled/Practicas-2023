@@ -1,0 +1,29 @@
+
+.color8 {
+  background: rgba(141, 141, 141, 0.991);
+  background-repeat: repeat-x;
+}
+
+
+      .box {
+        display: flex;
+        position: sticky;
+        justify-content: space-between;
+        top:0 ;
+        width:100vw;
+        height:10vh;
+      }
+.one{
+        width:25%;
+        height:35%;
+}
+     
+.two{
+        width:500%;
+        height:30%;
+
+}
+.three{
+        width:25%;
+        height:40%;
+}
